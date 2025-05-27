@@ -11,5 +11,21 @@ public class GameController {
 	public String start() {
 		return "start";
 	}
-//	test
+	@RequestMapping("game")
+	public String game() {
+		return "game";
+	}
+	@RequestMapping("finish")
+	public String finish() {
+		return "finish";
+	}
+	@RequestMapping("edit")
+	public String edit() {
+		return "edit";
+	}
+	@RequestMapping("complete")
+	public String complete() {
+		return "complete";
+	}
+	
 }
