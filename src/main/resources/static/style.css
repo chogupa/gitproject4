@@ -1,3 +1,4 @@
+/*inde.htmlのレイアウト*/
 .top h1 {
   font-size: 70px;
 }
@@ -14,3 +15,26 @@ ul {
   padding: 2rem;
   margin: 100px 80px 60px 40px;
 }
+
+
+/*.gameover.htmlのレイアウト*/
+h1 {
+	font-size: 50px;
+}
+.gameover-body {
+  background-color: #1e1e2f;
+  color: #FF8C00;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2rem;
+  margin: 200px 80px 60px 40px;
+  font-size: 30px;
+}
+.start-button {
+	margin: 150px 80px 60px 40px;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 20px;
+}
+
+
