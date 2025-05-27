@@ -1,0 +1,24 @@
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<html>
+
+<head>
+	<title>GameOver</title>
+	<meta charset="utf-8" />
+	<!--	<link rel="stylesheet" th:href="@{/style.css}" />-->
+</head>
+
+<body>
+	<!--	<h1 th:text="${title}"></h1>-->
+	<h1>ゲームオーバー</h1>
+
+	<form method="post" action="#" th:action="@{/start}" th:object="${input}">
+	
+		<p>残念！</p>
+<!--		余裕があれば正解を表示-->
+<!--		<p>正解はこうでした</p>-->
+	
+		<input type="submit" value="スタート画面へ">
+	</form>
+</body>
+
+</html>
