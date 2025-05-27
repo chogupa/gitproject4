@@ -21,6 +21,7 @@
 		//全てのマスを取得する
 		document.querySelectorAll('td[data-id]').forEach(td => {
 			const id = td.getAttribute('data-id') //マスのID取得
+			const count = td.getAttribute('data-count'); // 数字取得
 
 			let revealed = false; //マスが開いてるか
 			let flagged = false; //旗が立っているか
@@ -29,9 +30,21 @@
 			td.addEventListener('click', () => {
 				if (revealed || flagged) return; // すでに開いてる・旗ある
 				revealed = true;
-				td.classList.add(''); //cssクラス名挿入、マスの見た目変更
-				td.textContent = id;  // 仮にidを中身として表示
-			});
+				if(count === '2') {
+				      // 地雷判定
+				      td.textContent = '💣';
+				      td.style.backgroundColor = 'red';
+				      // ゲームオーバー画面
+				      window.location.href = '/gameover'; 
+				    } else if (count === '1') {
+				      // 安全マス
+				      td.textContent = ' ';
+				    } else {
+				      // それ以外の数値があれば表示
+				      td.textContent = count;
+				    }
+				  });
+				  
 
 			// 右クリックで旗を立てる
 			td.addEventListener('contextmenu', e => {
