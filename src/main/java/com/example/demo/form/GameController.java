@@ -1,6 +1,7 @@
 package com.example.demo.form;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,7 +13,10 @@ public class GameController {
 		return "index";
 	}
 	@RequestMapping("game")
-	public String game() {
+	public String game(Minesweeper minesweeper,Model model) {
+		
+		model.addAttribute("Minesweeper",minesweeper);
+		
 		return "game";
 	}
 	@RequestMapping("gameclear")
@@ -25,6 +29,7 @@ public class GameController {
 	}
 	@RequestMapping("edit")
 	public String edit() {
+		
 		return "edit";
 	}
 	@RequestMapping("confirm")
