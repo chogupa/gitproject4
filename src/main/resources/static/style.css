@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+/*トップページ*/
+=======
 /*inde.htmlのレイアウト*/
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 .top h1 {
-  font-size: 70px;
+	font-size: 70px;
 }
 
 ul {
@@ -8,14 +12,40 @@ ul {
 }
 
 .index-body {
-  background-color: #1e1e2f;
-  color: #eee;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  padding: 2rem;
-  margin: 100px 80px 60px 40px;
+	background-color: #1e1e2f;
+	color: #eee;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	margin: 100px 80px 60px 40px;
 }
 
+<<<<<<< HEAD
+/*ゲーム画面*/
+.game-body {
+	background-color: #1e1e2f;
+	color: #eee;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	min-height: 100vh;
+}
+
+.game-board td{
+background-color: #c0c0c0;
+color: #333;
+}
+
+.game-board td.revealed{
+	background-color: #888888;
+	color: #000;
+}
+
+.game-board td.flagged{
+	background-color: #d9534f;
+	color: #fff;
+}
+=======
 
 /*.gameover.htmlのレイアウト*/
 h1 {
@@ -38,3 +68,4 @@ h1 {
 }
 
 
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
