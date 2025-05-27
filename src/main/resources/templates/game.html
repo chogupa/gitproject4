@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="../../static/style.css" th:href="@{/style.css}">
 </head>
 
-<body>
-	<table>
+<body class="game-body">
+	<table class="game-board">
 		<tr th:each="row : ${#numbers.sequence(0,4)}">
 			<td th:each="col : ${#numbers.sequence(0,4)}" th:with="cell=${dbList[row * 5 + col]}"
 				th:attr="data-id=${cell.id}, data-flag=${cell.flag}, data-bomb=${cell.bomb}, data-count=${cell.count}"
