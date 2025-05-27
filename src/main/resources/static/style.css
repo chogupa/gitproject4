@@ -1,3 +1,16 @@
 .top h1 {
+  font-size: 70px;
+}
+
+ul {
+	list-style: none;
+}
+
+.index-body {
+  background-color: #1e1e2f;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
+  padding: 2rem;
+  margin: 100px 80px 60px 40px;
 }
