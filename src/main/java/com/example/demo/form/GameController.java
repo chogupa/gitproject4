@@ -35,8 +35,6 @@ public class GameController {
 //			return "game";
 //		}
 		
-		
-		
 		return "/game";
 	}
 	@RequestMapping("gameclear")
