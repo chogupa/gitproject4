@@ -11,4 +11,5 @@ public class GameController {
 	public String start() {
 		return "start";
 	}
+//	test
 }
