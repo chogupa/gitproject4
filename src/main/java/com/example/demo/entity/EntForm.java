@@ -1,21 +1,21 @@
 package com.example.demo.entity;
 
 public class EntForm {
-	private String id;
-	private String flag;
+	private int id;
+	private int flag;
 	private String comment;
-	private String bomb;
-	private String count;
-	public String getId() {
+	private int bomb;
+	private int count;
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFlag() {
+	public int getFlag() {
 		return flag;
 	}
-	public void setFlag(String flag) {
+	public void setFlag(int flag) {
 		this.flag = flag;
 	}
 	public String getComment() {
@@ -24,16 +24,16 @@ public class EntForm {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public String getBomb() {
+	public int getBomb() {
 		return bomb;
 	}
-	public void setBomb(String bomb) {
+	public void setBomb(int bomb) {
 		this.bomb = bomb;
 	}
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
 
