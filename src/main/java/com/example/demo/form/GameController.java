@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class GameController {
 
-	@RequestMapping("start")
-	public String start() {
-		return "start";
+	@RequestMapping("index")
+	public String index() {
+		return "index";
 	}
 	@RequestMapping("game")
 	public String game() {
@@ -23,9 +23,9 @@ public class GameController {
 	public String edit() {
 		return "edit";
 	}
-	@RequestMapping("complete")
-	public String complete() {
-		return "complete";
+	@RequestMapping("confirm")
+	public String confirm() {
+		return "confirm";
 	}
 
 	
