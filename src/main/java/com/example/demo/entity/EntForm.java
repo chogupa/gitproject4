@@ -36,4 +36,5 @@ public class EntForm {
 	public void setCount(String count) {
 		this.count = count;
 	}
+	
 }
