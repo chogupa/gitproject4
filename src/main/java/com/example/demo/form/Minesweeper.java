@@ -33,4 +33,38 @@ public class Minesweeper {
 		return list2;
 		
 	}
+	
+//	boolean[][] mineField = {
+//            {false, false, false, false, false},
+//            {false, true,  false, false, false},
+//            {false, false, false, true,  false},
+//            {false, false, false, false, false},
+//            {false, false, false, false, false},
+//        };
+//
+//        // 地雷をカウントしたい位置（例：2,2）
+//        int y = 2;
+//        int x = 2;
+//
+//        int count = 0;
+//
+//        // 8方向を調べる
+//        for (int dy = -1; dy <= 1; dy++) {
+//            for (int dx = -1; dx <= 1; dx++) {
+//                if (dy == 0 && dx == 0) continue; // 自分自身は除外
+//
+//                int ny = y + dy;
+//                int nx = x + dx;
+//
+//                // 範囲チェック
+//                if (ny >= 0 && ny < 5 && nx >= 0 && nx < 5) {
+//                    if (mineField[ny][nx]) {
+//                        count++;
+//                    }
+//                }
+//            }
+//        }
+//
+//        System.out.println("周りの地雷の数: " + count);
+//    }
 }
