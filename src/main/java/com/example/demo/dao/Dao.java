@@ -17,7 +17,7 @@ public class Dao {
 	public Dao(JdbcTemplate db) {
 		this.db = db;
 	}
-	
+//	データのアップロード
 	public void insertDao(EntForm entform) {
 		db.update("INSERT INTO minesweeper (flag,comment,bomb,count) VALUES(0,'',0,0)");
 	}
