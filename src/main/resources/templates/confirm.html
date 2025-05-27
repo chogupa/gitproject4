@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<head>
+	<title>確認ページ</title>
+	<meta charset="utf-8" />
+<!--	<link rel="stylesheet" th:href="@{/style.css}" />-->
+</head>
+
+<body>
+	<h1>変更内容の確認</h1>
+<!--	<h1 th:text="${title}"></h1>-->
+
+	<div th:object="${input}">
+		<p th:text="*{name}"></p>
+		<p>を変更します。よろしいですか？</p>
+	</div>
+
+	<form method="get" action="#" th:action="@gameにリダイレクト" th:object="${input}">
+		<input type="hidden" name="name" th:value="*{name}">
+		<input type="submit" value="はい">
+	</form>
+
+	<form method="get" action="#" th:action="戻る画面" th:object="${input}">
+		<input type="hidden" name="name" th:value="*{name}">
+		<input type="submit" value="いいえ">
+	</form>
+</body>
+
+</html>
