@@ -7,25 +7,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class GameController {
 
-	@RequestMapping("start")
-	public String start() {
-		return "start";
+	@RequestMapping("index")
+	public String index() {
+		return "index";
 	}
 	@RequestMapping("game")
 	public String game() {
 		return "game";
 	}
-	@RequestMapping("finish")
-	public String finish() {
-		return "finish";
+	@RequestMapping("gameclear")
+	public String gameclear() {
+		return "gameclear";
+	}
+	@RequestMapping("gameover")
+	public String gameover() {
+		return "gameover";
 	}
 	@RequestMapping("edit")
 	public String edit() {
 		return "edit";
 	}
-	@RequestMapping("complete")
-	public String complete() {
-		return "complete";
+	@RequestMapping("confirm")
+	public String confirm() {
+		return "confirm";
 	}
 
 	
