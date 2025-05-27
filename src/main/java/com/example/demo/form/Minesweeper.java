@@ -12,7 +12,7 @@ public class Minesweeper {
 	public Minesweeper(int masu) {
 		this.masu=masu;
 		this.masume = masu*masu;
-		this.mine = masume / 6;
+		this.mine = (int)this.masume / 6;
 	}
 
 	public ArrayList<Integer> generateMinesweeper() {
@@ -22,33 +22,36 @@ public class Minesweeper {
 		for (int i = 0; i < this.masume; i++) {
 			list.add(i);
 		}
-		System.out.println(list);
 		//        リストをシャッフル
 		Collections.shuffle(list);
-
+//地雷のあるマスのIDリストを用意
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
 
+//		ランダムに地雷のあるマスを選んでリストに入れる。
 		for (int i = 0; i < this.mine; i++) {
 			list2.add(list.get(i));
 		}
-		System.out.println(list2);
+//		地雷のあるマスのIDリストを返す。
 		return list2;
 
 	}
 
-	private ArrayList<Integer> MineCount(ArrayList<Integer> list) {
+	public ArrayList<Integer> MineCount(ArrayList<Integer> list) {
+//		指定されたマス目の二次元配列を作成
 		boolean[][] mineField = new boolean[this.masu][this.masu];
-		ArrayList<Integer> countList = new ArrayList<Integer>();
+//		地雷のあるマスをtrueに
 		for (int i = 0; i < this.mine; i++) {
 			int index = list.get(i)-1;
 			int y = (int) index / this.masu;
 			int x = index - y * this.masu;
 			mineField[y][x] = true;
 		}
-
+		ArrayList<Integer> countList = new ArrayList<Integer>();
+//		マスひとつずつ調べる
 		for (int y = 0; y < this.masu; y++) {
 			for (int x = 0; x < this.masu; x++) {
 				int count = 0;
+//				周囲のマスに地雷があるか調べる
 				for (int dy = -1; dy <= 1; dy++) {
 					for (int dx = -1; dx <= 1; dx++) {
 						if (dy == 0 && dx == 0)
@@ -59,6 +62,7 @@ public class Minesweeper {
 
 						// 範囲チェック
 						if (ny >= 0 && ny < this.masu && nx >= 0 && nx < this.masu) {
+//							周囲のマスに地雷があればカウント
 							if (mineField[ny][nx]) {
 								count++;
 							}
@@ -66,6 +70,7 @@ public class Minesweeper {
 					}
 
 				}
+//				ID順のリストに地雷の数をセット
 				countList.add(count);
 			}
 
