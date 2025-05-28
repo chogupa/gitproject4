@@ -1,22 +1,25 @@
-<html>
-	<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>GameOver</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
+		rel="stylesheet">
 </head>
 
 <body class="gameover-body">
 	<!--	<h1 th:text="${title}"></h1>-->
 	<h1>ゲームオーバー</h1>
 
+
 	<form method="post" action="#" th:action="@{index}" th:object="${input}">
-	
+
 		<p>残念！また挑戦してね！</p>
-<!--		余裕があれば正解を表示-->
-<!--		<p>正解はこうでした</p>-->
-	
+		<!--		余裕があれば正解を表示-->
+		<!--		<p>正解はこうでした</p>-->
+
 		<input type="submit" value="スタート画面へ" class="start-button">
 	</form>
 </body>
