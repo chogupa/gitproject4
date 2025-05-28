@@ -69,10 +69,10 @@ public class Dao {
 			EntForm entformdb = new EntForm();
 			//id、nameのデータをentformdbに移す
 			entformdb.setId((int) result1.get("id"));
-			entformdb.setFlag((int) result1.get("name"));
+			entformdb.setFlag((int) result1.get("flag"));
 			entformdb.setComment((String) result1.get("comment"));
-			entformdb.setBomb((int) result1.get("comment"));
-			entformdb.setCount((int) result1.get("comment"));
+			entformdb.setBomb((int) result1.get("bomb"));
+			entformdb.setCount((int) result1.get("count"));
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
 		}
