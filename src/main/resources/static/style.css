@@ -77,11 +77,11 @@ color: #333;
 }
 
 
-/*edit.htmlのレイアウト*/
-.edit-body h1{
+/*edit.htmlとconfilm.htmlのレイアウト*/
+.Ebody-Cbody{
 	font-size: 50px;
 }
-.edit-body {
+.Ebody-Cbody {
 	background-color: #1e1e2f;
 	  color: white;
 	  font-family: 'Courier New', Courier, monospace;
@@ -92,7 +92,7 @@ color: #333;
 	  border-radius: 10px;
 	  	max-width: 100%;
 }
-.update-button {
+.update-confirm-button {
 	margin: 5px 10px;
 	padding: 10px 15px;
 	font-size: 15px;
