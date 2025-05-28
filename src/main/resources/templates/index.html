@@ -20,10 +20,10 @@
 				<li>うう</li>
 			</ul>
 		</section>
-		
-		<div class="buttons">
-			<a th:href="@{/game}" class="button start">ゲーム開始</a>
-		</div>
+		<form action="#" method="get" th:action="@{game}">
+			<input type="submit" value="ゲーム開始" class="s-button">
+		</form>
 	</div>
 </body>
+
 </html>
