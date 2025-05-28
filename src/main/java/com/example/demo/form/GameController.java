@@ -1,20 +1,48 @@
 package com.example.demo.form;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.dao.Dao;
+import com.example.demo.entity.EntForm;
 
 @Controller
 
 public class GameController {
 
+	private final Dao dao;
+	
+	public GameController(Dao dao) {
+		this.dao=dao;
+	}
+	
 	@RequestMapping("index")
 	public String index() {
 		return "index";
 	}
+	
+	
+	
 	@RequestMapping("game")
-	public String game() {
-		
-
+	public String game(Model model) {
+		int masume = 5;
+		for(int i=0;i<masume*masume;i++) {
+			dao.insertDao();
+		}
+		Minesweeper minesweeper = new Minesweeper(masume);
+		ArrayList<Integer>list = minesweeper.generateMinesweeper();
+		for(Integer i:list) {
+			int id = (int)i;
+			EntForm entform = new EntForm();
+			entform.setBomb(entform.getBomb()+1);
+			dao.updateDao((long) id, entform);
+		}
+		List<EntForm> listMine = dao.getAll();
+		model.addAttribute("dbList", listMine);
 		return "game";
 	}
 	@RequestMapping("gameclear")
