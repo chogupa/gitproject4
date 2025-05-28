@@ -102,6 +102,7 @@ public class GameController {
 		model.addAttribute("form",entformdb);
 		model.addAttribute("input",input);
 		return "edit";
+//		back
 		
 	}
 	
