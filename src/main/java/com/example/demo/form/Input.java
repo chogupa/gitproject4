@@ -6,9 +6,9 @@ public class Input {
 	
 	private int id;
 	private int flag;
+	@Size(min=0,message="コメントを１文字以上入力してください")
 	private String comment;
 	private int bomb;
-	@Size(max=1,message="ゲームオーバー")
 	private int count;
 	public int getId() {
 		return id;
