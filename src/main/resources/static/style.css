@@ -61,6 +61,7 @@ color: #333;
 	color: #fff;
 }
 
+/*gameover.htmlのレイアウト*/
 .gameover-body h1 {
 	font-size: 50px;
 }
@@ -82,21 +83,18 @@ color: #333;
 	  font-family: 'Courier New', Courier, monospace;
 	  text-align: center;
 	  padding: 2rem;
-	  margin: 200px auto 60px auto;
+	  margin: 100px auto 60px auto;
 	  font-size: 30px;	
 	  border-radius: 10px;
 	  	max-width: 100%;
 }
 
 .update-button {
-	margin: 5px auto;
-	width: 100px;
-
-	padding: 10px 15px;
+	margin: 5px auto 5px auto 60px auto 60px auto;
+	padding: 15px 30px;
 	font-size: 15px;
 	border-radius: 20px;
 }
-
 
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body h1 {
@@ -114,7 +112,7 @@ color: #333;
 
 /*ゲーム画面に飛ぶ*/
 .s-button {
-	margin: 150px auto 60px auto;
+	margin: 30px auto 60px auto;
 	padding: 15px 30px;
 	font-size: 15px;
 	border-radius: 20px;
