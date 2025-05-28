@@ -37,9 +37,23 @@ public class GameController {
 		ArrayList<Integer>list = minesweeper.generateMinesweeper();
 		for(Integer i:list) {
 			int id = (int)i;
-			EntForm entform = new EntForm();
-			entform.setBomb(entform.getBomb()+1);
-			dao.updateDao((long) id, entform);
+			List<EntForm> list1 = dao.getOne((long)id);
+			EntForm entformdb=list1.get(0);
+		
+			entformdb.setBomb(entformdb.getBomb()+1);
+			dao.updateDao((long) id, entformdb);
+		
+		}
+		ArrayList minecount = minesweeper.MineCount(list);
+		EntForm entform = new EntForm();
+		
+		for(int j=0 ; j<25 ; j++) {
+			int id = (int)j;
+			List<EntForm> list2= dao.getOne((long)id);
+			EntForm entformdb=list2.get(0);
+			entformdb.setCount(entformdb.getCount());
+			dao.updateDao((long)j, entformdb);
+		
 		}
 		List<EntForm> listMine = dao.getAll();
 		model.addAttribute("dbList", listMine);

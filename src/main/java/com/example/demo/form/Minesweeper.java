@@ -35,11 +35,11 @@ public class Minesweeper {
 		return list2;
 
 	}
-//		地雷のあるマスのIDのリストを引数に
+
 	public ArrayList<Integer> MineCount(ArrayList<Integer> list) {
 //		指定されたマス目の二次元配列を作成
 		boolean[][] mineField = new boolean[this.masu][this.masu];
-//		地雷のあるマスをtrueに
+//		地雷のあるマスをtruenに
 		for (int i = 0; i < this.mine; i++) {
 			int index = list.get(i)-1;
 			int y = (int) index / this.masu;

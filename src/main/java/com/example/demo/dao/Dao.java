@@ -19,7 +19,7 @@ public class Dao {
 	}
 //	データのアップロード
 	public void insertDao() {
-		db.update("INSERT INTO minesweeper (flag,comment,bomb,count) VALUES(0,'',0,0)");
+		db.update("INSERT INTO minesweeper (flag,comment,bomb,count) VALUES(0,'仮',0,0)");
 	}
 	
 	public List<EntForm> getAll() {
@@ -55,7 +55,7 @@ public class Dao {
 	}
 	
 	public void updateDao(Long id,EntForm entform) {
-		db.update("UPDATE minesweeper SET flag = ?, comment = ?,bomb = ?, count = ?, WHERE id = ?", entform.getFlag(),entform.getComment(),entform.getBomb() ,entform.getCount(),id);
+		db.update("UPDATE minesweeper SET flag = ?, comment = ?,bomb = ?, count = ? WHERE id = ?", entform.getFlag(),entform.getComment(),entform.getBomb() ,entform.getCount(),id);
 	}
 
 	
