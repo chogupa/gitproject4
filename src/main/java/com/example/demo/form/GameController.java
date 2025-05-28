@@ -43,7 +43,7 @@ public class GameController {
 			EntForm entformdb=list1.get(0);
 		
 			entformdb.setBomb(entformdb.getBomb()+1);
-			dao.updateDao((long) i, entformdb);
+			dao.updateDao((long) list.get(i), entformdb);
 		
 		}
 		ArrayList<Integer> minecount = minesweeper.MineCount(list);
@@ -75,6 +75,7 @@ public class GameController {
 		model.addAttribute("form",entformdb);
 		return "edit";
 	}
+	
 	@RequestMapping("confirm")
 
 	public String confirm(@PathVariable Long id,@Validated Input input,BindingResult result,Model model) {

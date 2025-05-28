@@ -3,7 +3,6 @@ package com.example.demo.form;
 import jakarta.validation.constraints.Size;
 
 public class Input {
-	
 	private int id;
 	private int flag;
 	@Size(min=0,message="コメントを１文字以上入力してください")

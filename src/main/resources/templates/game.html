@@ -26,7 +26,7 @@
 		// 安全マスの総数をカウント
 		let safeCount = 0;
 		allTds.forEach(td => {
-			const bomb = td.getAttribute('data-count');
+			const bomb = td.getAttribute('data-bomb');
 			if (bomb !== '1') { // '2'以外が安全マス
 				safeCount++;
 			}
@@ -61,10 +61,11 @@
 			};
 			
 			allTds.forEach(td => {
-				const bomb = td.getAttribute('data-count');
+				const count = td.getAttribute('data-count');
+				const bomb = td.getAttribute('data-bomb');   // 地雷かどうか
 			
 			// 左クリックで開く
-						td.addEventListener('click', () => revealCell(td,bomb));
+						td.addEventListener('click', () => revealCell(td,bomb,count));
 
 			// 右クリックで旗を立てる
 			td.addEventListener('contextmenu', e => {
