@@ -15,7 +15,7 @@
 	<!--	<h1 th:text="${title}"></h1>-->
 
 	<div th:object="${input}">
-		<p th:text="*{name}"></p>
+		<p th:text="*{comment}"></p>
 		<p>を変更します。よろしいですか？</p>
 	</div>
 
@@ -23,9 +23,9 @@
 		<input type="hidden" name="name" th:value="*{name}">
 		<input type="submit" value="はい" class="s-button">
 	</form>
-	<form method="get" action="#" th:action="戻る画面" th:object="${input}">
+	<form method="get" action="#" th:action="@{/edit}" th:object="${input}">
 		<input type="hidden" name="name" th:value="*{name}">
-		<input type="submit" value="いいえ" class="update-button ">
+		<input type="submit" value="いいえ" class="confilm-button">
 	</form>
 </body>
 
