@@ -13,7 +13,7 @@
 	<div th:object="${input}">
 		<form action="#" method="get" th:action="@{confirm}">
 			<p>追加するコメント</p>
-<!--			以下バリデーション-->
+			<!--以下バリデーション-->
 			<p><input type="text" class="textbox" name="comment" th:value="*{comment}"></p>
 			<div th:if="${#fields.hasErrors('message')}" th:errors="*{comment}" style="color: red;">エラー</div>
 			
