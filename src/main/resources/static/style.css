@@ -1,0 +1,71 @@
+<<<<<<< HEAD
+/*トップページ*/
+=======
+/*inde.htmlのレイアウト*/
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
+.top h1 {
+	font-size: 70px;
+}
+
+ul {
+	list-style: none;
+}
+
+.index-body {
+	background-color: #1e1e2f;
+	color: #eee;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	margin: 100px 80px 60px 40px;
+}
+
+<<<<<<< HEAD
+/*ゲーム画面*/
+.game-body {
+	background-color: #1e1e2f;
+	color: #eee;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	min-height: 100vh;
+}
+
+.game-board td{
+background-color: #c0c0c0;
+color: #333;
+}
+
+.game-board td.revealed{
+	background-color: #888888;
+	color: #000;
+}
+
+.game-board td.flagged{
+	background-color: #d9534f;
+	color: #fff;
+}
+=======
+
+/*.gameover.htmlのレイアウト*/
+h1 {
+	font-size: 50px;
+}
+.gameover-body {
+  background-color: #1e1e2f;
+  color: #FF8C00;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2rem;
+  margin: 200px 80px 60px 40px;
+  font-size: 30px;
+}
+.start-button {
+	margin: 150px 80px 60px 40px;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 20px;
+}
+
+
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git

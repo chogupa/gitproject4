@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>編集ページ</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<!--	<h1 th:text="${title}"></h1>-->
+	<h1>編集画面</h1>
+	<div th:object="${ここにidが入る、多分}">
+		<form action="#" method="get" th:action="@{/confirm}">
+			<p>追加するコメント<input type="text" name="comment" th:value="*{comment}"></p>
+			<input type="submit" value="更新">
+		</form>
+
+		<form action="#" method="get" th:action="@{/game}">
+			<input type="submit" value="やめる">
+		</form>
+	</div>
+
+
+
+</body>
+
+</html>
