@@ -44,9 +44,10 @@ public class Minesweeper {
 			int index = list.get(i);
 			int y = (int) index / this.masu;
 //			int x = index - y * this.masu;
-			int x = (index%this.masu)-1;
+			int x = index%this.masu;
 			mineField[y][x] = true;
 		}
+		
 		ArrayList<Integer> countList = new ArrayList<Integer>();
 //		マスひとつずつ調べる
 		for (int y = 0; y < this.masu; y++) {
