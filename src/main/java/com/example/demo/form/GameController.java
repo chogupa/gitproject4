@@ -53,7 +53,7 @@ public class GameController {
 			List<EntForm> list2= dao.getOne((long)i+1);
 			EntForm entformdb=list2.get(0);
 			entformdb.setCount(minecount.get(i));
-			dao.updateDao((long)i, entformdb);
+			dao.updateDao((long)i+1, entformdb);
 		
 		}
 		List<EntForm> listMine = dao.getAll();
