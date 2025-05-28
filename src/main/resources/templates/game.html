@@ -26,7 +26,7 @@
 		// 安全マスの総数をカウント
 		let safeCount = 0;
 		allTds.forEach(td => {
-			const bomb = td.getAttribute('data-bomb');
+			const bomb = td.getAttribute('data-count');
 			if (bomb !== '1') { // '2'以外が安全マス
 				safeCount++;
 			}
@@ -34,7 +34,7 @@
 
 		let revealedCount = 0; // 開いた安全マスのカウンター
 
-		const revealCell = (td,bomb) =>{
+		const revealCell = (td,bomb,count) =>{
 			let revealed = false; //マスが開いてるか
 			let flagged = false; //旗が立っているか
 
@@ -49,7 +49,7 @@
 					window.location.href = '/gameover';
 				}  else {
 					// 周りに地雷がある安全マス
-					td.textContent = bomb === '0' ? '0' : bomb;
+					td.textContent = count === '0' ? '0' : count;
 					revealedCount++;
 				}
 
