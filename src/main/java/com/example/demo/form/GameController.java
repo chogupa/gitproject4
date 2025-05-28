@@ -44,14 +44,13 @@ public class GameController {
 			dao.updateDao((long) id, entformdb);
 		
 		}
-		ArrayList minecount = minesweeper.MineCount(list);
-		EntForm entform = new EntForm();
+		ArrayList<Integer> minecount = minesweeper.MineCount(list);;
 		
-		for(int j=0 ; j<25 ; j++) {
-			int id = (int)j;
-			List<EntForm> list2= dao.getOne((long)id);
+		for(int j :minecount) {
+			
+			List<EntForm> list2= dao.getOne((long)j);
 			EntForm entformdb=list2.get(0);
-			entformdb.setCount(entformdb.getCount());
+			entformdb.setCount(minecount.get(j));
 			dao.updateDao((long)j, entformdb);
 		
 		}
