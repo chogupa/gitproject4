@@ -34,14 +34,12 @@
 
 		let revealedCount = 0; // 開いた安全マスのカウンター
 
-		allTds.forEach(td => {
-			const bomb = td.getAttribute('data-count');
+		const revealCell = (td,bomb) =>{
 			let revealed = false; //マスが開いてるか
 			let flagged = false; //旗が立っているか
 
-			// 左クリックで開く
-			td.addEventListener('click', () => {
 				if (revealed || flagged) return; // すでに開いてる・旗ある
+				
 				revealed = true;
 				if (bomb === '2') {
 					// 地雷判定
@@ -49,27 +47,24 @@
 					td.style.backgroundColor = 'red';
 					// ゲームオーバー画面
 					window.location.href = '/gameover';
-					}else{
-						const count = parseInt(td.getAttribute('data-count'));
-					
-				} else if (bomb === '0') {
-					// 周りに地雷がない安全マス
-					td.textContent = ' ';
-					revealedCount++;
-				} else {
+				}  else {
 					// 周りに地雷がある安全マス
-					td.textContent = bomb;
+					td.textContent = bomb === '0' ? '0' : bomb;
 					revealedCount++;
 				}
-
-				td.classList.add('revealed');
 
 				// すべての安全マスを開いたかチェック
 				if (revealedCount === safeCount) {
 					// ゲームクリア画面に遷移
 					window.location.href = '/gameclear';
 				}
-			});
+			};
+			
+			allTds.forEach(td => {
+				const bomb = td.getAttribute('data-count');
+			
+			// 左クリックで開く
+						td.addEventListener('click', () => revealCell(td,bomb));
 
 			// 右クリックで旗を立てる
 			td.addEventListener('contextmenu', e => {
