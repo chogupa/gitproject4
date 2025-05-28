@@ -49,6 +49,9 @@
 					td.style.backgroundColor = 'red';
 					// ゲームオーバー画面
 					window.location.href = '/gameover';
+					}else{
+						const count = parseInt(td.getAttribute('data-count'));
+					
 				} else if (bomb === '0') {
 					// 周りに地雷がない安全マス
 					td.textContent = ' ';
