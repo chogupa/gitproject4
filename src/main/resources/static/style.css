@@ -20,6 +20,7 @@
 
 /*inde.htmlのレイアウト*/
 .top h1 {
+	font-family: 'Share Tech Mono', monospace, sans-serif;
 	font-size: 70px;
 }
 ul {
@@ -30,7 +31,7 @@ ul {
 .index-body {
 	background-color: #1e1e2f;
 	color: #eee;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	text-align: center;
 	padding: 2rem;
 	margin: 100px auto 60px auto;
@@ -40,7 +41,7 @@ ul {
 .game-body {
 	background-color: #1e1e2f;
 	color: #eee;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	text-align: center;
 	padding: 2rem;
 	min-height: 100vh;
@@ -62,12 +63,13 @@ color: #333;
 }
 
 .gameover-body h1 {
+	font-family: 'Share Tech Mono', monospace, sans-serif;
 	font-size: 50px;
 }
 .gameover-body {
   background-color: #1e1e2f;
   color: #FF8C00;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
   text-align: center;
   padding: 2rem;
   margin: 200px auto 60px auto;
@@ -79,7 +81,7 @@ color: #333;
 .Ebody-Cbody {
 	background-color: #1e1e2f;
 	  color: white;
-	  font-family: 'Courier New', Courier, monospace;
+	  font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	  text-align: center;
 	  padding: 2rem;
 	  margin: 200px auto 60px auto;
@@ -91,21 +93,20 @@ color: #333;
 .update-button {
 	margin: 5px auto;
 	width: 100px;
-
 	padding: 10px 15px;
 	font-size: 15px;
 	border-radius: 20px;
 }
 
-
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body h1 {
+	font-family: 'Share Tech Mono', monospace, sans-serif;
 	font-size: 50px;
 }
 .gameclear-body {
   background-color: #1e1e2f;
   color: #00FFFF;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
   text-align: center;
   padding: 2rem;
   margin: 200px auto 60px auto;
