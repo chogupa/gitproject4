@@ -1,11 +1,14 @@
 package com.example.demo.form;
 
+import jakarta.validation.constraints.Size;
+
 public class Input {
 	
 	private int id;
 	private int flag;
 	private String comment;
 	private int bomb;
+	@Size(max=1,message="ゲームオーバー")
 	private int count;
 	public int getId() {
 		return id;
