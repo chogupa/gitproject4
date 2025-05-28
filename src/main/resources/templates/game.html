@@ -27,7 +27,7 @@
 		let safeCount = 0;
 		allTds.forEach(td => {
 			const bomb = td.getAttribute('data-count');
-			if (bomb !== '2') { // '2'以外が安全マス
+			if (bomb !== '1') { // '2'以外が安全マス
 				safeCount++;
 			}
 		});
@@ -41,7 +41,7 @@
 				if (revealed || flagged) return; // すでに開いてる・旗ある
 				
 				revealed = true;
-				if (bomb === '2') {
+				if (bomb === '1') {
 					// 地雷判定
 					td.textContent = '💣';
 					td.style.backgroundColor = 'red';
@@ -61,7 +61,7 @@
 			};
 			
 			allTds.forEach(td => {
-				const bomb = td.getAttribute('data-bomb');
+				const bomb = td.getAttribute('data-count');
 			
 			// 左クリックで開く
 						td.addEventListener('click', () => revealCell(td,bomb));
