@@ -70,7 +70,8 @@ public class GameController {
 		return "edit";
 	}
 	@RequestMapping("confirm")
-	public String confirm(Long id,Input input,Model model) {
+
+	public String confirm(Input input,Model model,Long id) {
 	    EntForm entform = new EntForm();
 		
 		entform.setComment(input.getComment());
