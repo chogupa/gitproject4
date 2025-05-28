@@ -41,7 +41,7 @@ public class Minesweeper {
 		boolean[][] mineField = new boolean[this.masu][this.masu];
 //		地雷のあるマスをtruenに
 		for (int i = 0; i < this.mine; i++) {
-			int index = list.get(i)-1;
+			int index = list.get(i);
 			int y = (int) index / this.masu;
 			int x = index - y * this.masu;
 			mineField[y][x] = true;
