@@ -1,21 +1,21 @@
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 
 <head>
 	<title>クリアページ</title>
 	<meta charset="utf-8" />
-	<!--	<link rel="stylesheet" th:href="@{/style.css}" />-->
+		<link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 
-<body>
-	<!--	<h1 th:text="${title}"></h1>-->
+<body class="gameclear-body">
+<!--		<h1 th:text="${title}"></h1>-->
 	<h1>ゲームクリア！</h1>
 
-	<form method="post" action="#" th:action="@{/start}" th:object="${input}">
-	
-		<p>おめでとうございます！</p>	
-	
-		<input type="submit" value="スタート画面へ">
+	<form method="post"  th:action="@{/start}" th:object="${input}">
+
+		<p>おめでとうございます！</p>
+
+		<input type="submit" value="スタート画面へ" class="start-button">
 	</form>
 </body>
 

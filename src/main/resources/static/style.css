@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 /*トップページ*/
-=======
 /*inde.htmlのレイアウト*/
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 .top h1 {
 	font-size: 70px;
 }
@@ -20,7 +17,6 @@ ul {
 	margin: 100px 80px 60px 40px;
 }
 
-<<<<<<< HEAD
 /*ゲーム画面*/
 .game-body {
 	background-color: #1e1e2f;
@@ -45,7 +41,6 @@ color: #333;
 	background-color: #d9534f;
 	color: #fff;
 }
-=======
 
 /*.gameover.htmlのレイアウト*/
 h1 {
@@ -67,5 +62,13 @@ h1 {
 	border-radius: 20px;
 }
 
-
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
+/*.gameclear.htmlのレイアウト*/
+.gameclear-body {
+  background-color: #1e1e2f;
+  color: #80ffff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2rem;
+  margin: 200px auto 60px auto;
+  font-size: 30px;
+}
