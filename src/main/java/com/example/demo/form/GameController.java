@@ -39,12 +39,11 @@ public class GameController {
 		Minesweeper minesweeper = new Minesweeper(masume);
 		ArrayList<Integer>list = minesweeper.generateMinesweeper();
 		for(int i=0;i<list.size();i++) {
-			List<EntForm> list1 = dao.getOne((long)list.get(i));
-			EntForm entformdb=list1.get(0);
-		
-			entformdb.setBomb(entformdb.getBomb()+1);
-			dao.updateDao((long) list.get(i), entformdb);
-		
+			long id = list.get(i) + 1;
+			List<EntForm> list1 = dao.getOne(id);
+			EntForm entformdb = list1.get(0);
+			entformdb.setBomb(1); // +1しなくてOK
+			dao.updateDao(id, entformdb);
 		}
 		ArrayList<Integer> minecount = minesweeper.MineCount(list);
 		
