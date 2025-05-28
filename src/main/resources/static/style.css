@@ -89,6 +89,7 @@ color: #333;
 	  	max-width: 100%;
 }
 .update-confirm-button {
+	width: 100px;
 	margin: 5px 10px;
 	padding: 10px 15px;
 	font-size: 15px;
