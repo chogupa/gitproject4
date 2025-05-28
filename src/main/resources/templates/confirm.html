@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>確認ページ</title>
 	<meta charset="utf-8" />
-<!--	<link rel="stylesheet" th:href="@{/style.css}" />-->
+<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 </head>
 
-<body>
+<body class="Ebody-Cbody">
 	<h1>変更内容の確認</h1>
 <!--	<h1 th:text="${title}"></h1>-->
 
@@ -20,10 +20,9 @@
 		<input type="hidden" name="name" th:value="*{name}">
 		<input type="submit" value="はい" class="s-button">
 	</form>
-
 	<form method="get" action="#" th:action="戻る画面" th:object="${input}">
 		<input type="hidden" name="name" th:value="*{name}">
-		<input type="submit" value="いいえ">
+		<input type="submit" value="いいえ" class="update-button ">
 	</form>
 </body>
 

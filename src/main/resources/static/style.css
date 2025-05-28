@@ -75,11 +75,8 @@ color: #333;
 }
 
 
-/*edit.htmlのレイアウト*/
-.edit-body h1{
-	font-size: 50px;
-}
-.edit-body {
+/*edit.htmlとconfilm.htmlのレイアウト*/
+.Ebody-Cbody {
 	background-color: #1e1e2f;
 	  color: white;
 	  font-family: 'Courier New', Courier, monospace;
@@ -90,8 +87,11 @@ color: #333;
 	  border-radius: 10px;
 	  	max-width: 100%;
 }
+
 .update-button {
 	margin: 5px auto;
+	width: 100px;
+
 	padding: 10px 15px;
 	font-size: 15px;
 	border-radius: 20px;
@@ -110,7 +110,7 @@ color: #333;
 }
 
 /*ゲーム画面に飛ぶ*/
-.start-button {
+.s-button {
 	margin: 150px auto 60px auto;
 	padding: 15px 30px;
 	font-size: 15px;
