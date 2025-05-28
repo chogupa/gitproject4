@@ -1,17 +1,32 @@
-<<<<<<< HEAD
+/*スタート画面に戻るボタン*/
+.start-button {
+	margin: 150px 80px 60px 40px;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 20px;
+}
 
-=======
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
-/*トップページ*/
+/*ユーザーが入力するテキストボックス*/
+.textbox {
+	width: 400px;
+	height: 20px;
+	display: block;
+	margin: 0 auto;
+	font-size: 15px;
+	padding: 5px; 
+	
+}
+
+
+
+
 /*inde.htmlのレイアウト*/
 .top h1 {
 	font-size: 70px;
 }
-
 ul {
 	list-style: none;
 }
-
 .index-body {
 	background-color: #1e1e2f;
 	color: #eee;
@@ -21,10 +36,7 @@ ul {
 	margin: 100px 80px 60px 40px;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 /*ゲーム画面*/
 .game-body {
 	background-color: #1e1e2f;
@@ -49,12 +61,8 @@ color: #333;
 	background-color: #d9534f;
 	color: #fff;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
-
-/*.gameover.htmlのレイアウト*/
+/*gameover.htmlのレイアウト*/
 .gameover-body h1 {
 	font-size: 50px;
 }
@@ -67,30 +75,13 @@ color: #333;
   margin: 200px 80px 60px 40px;
   font-size: 30px;
 }
-.start-button {
-	margin: 150px 80px 60px 40px;
-	padding: 15px 30px;
-	font-size: 15px;
-	border-radius: 20px;
-}
 
-<<<<<<< HEAD
+
 
 /*edit.htmlのレイアウト*/
 .edit-body h1{
 	font-size: 50px;
 }
-
-.textbox {
-	width: 400px;
-	height: 20px;
-	display: block;
-	margin: 0 auto;
-	font-size: 15px;
-	padding: 5px; 
-	
-}
-
 .edit-body {
 	background-color: #1e1e2f;
 	  color: white;
@@ -102,7 +93,6 @@ color: #333;
 	  border-radius: 10px;
 	  	max-width: 100%;
 }
-
 .update-button {
 	margin: 5px 10px;
 	padding: 10px 15px;
@@ -111,8 +101,6 @@ color: #333;
 }
 
 
-
-=======
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body {
   background-color: #1e1e2f;
@@ -123,4 +111,3 @@ color: #333;
   margin: 200px auto 60px auto;
   font-size: 30px;
 }
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
