@@ -5,8 +5,7 @@
 	<meta charset="UTF-8">
 	<title>ゲーム画面</title>
 	<link rel="stylesheet" href="../../static/style.css" th:href="@{/style.css}">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
 		rel="stylesheet">
 </head>
 
@@ -21,11 +20,22 @@
 	</table>
 
 	<script>
-		//全てのマスを取得する
-		document.querySelectorAll('td[data-id]').forEach(td => {
-			const id = td.getAttribute('data-id') //マスのID取得
-			const count = td.getAttribute('data-count'); // 数字取得
+		//全てのマスを取得
+		const allTds = document.querySelectorAll('td[data-id]');
 
+		// 安全マスの総数をカウント
+		let safeCount = 0;
+		allTds.forEach(td => {
+			const bomb = td.getAttribute('data-count');
+			if (bomb !== '2') { // '2'以外が安全マス
+				safeCount++;
+			}
+		});
+
+		let revealedCount = 0; // 開いた安全マスのカウンター
+
+		allTds.forEach(td => {
+			const bomb = td.getAttribute('data-count');
 			let revealed = false; //マスが開いてるか
 			let flagged = false; //旗が立っているか
 
@@ -33,18 +43,28 @@
 			td.addEventListener('click', () => {
 				if (revealed || flagged) return; // すでに開いてる・旗ある
 				revealed = true;
-				if (count === '2') {
+				if (bomb === '2') {
 					// 地雷判定
 					td.textContent = '💣';
 					td.style.backgroundColor = 'red';
 					// ゲームオーバー画面
 					window.location.href = '/gameover';
-				} else if (count === '1') {
-					// 安全マス
+				} else if (bomb === '0') {
+					// 周りに地雷がない安全マス
 					td.textContent = ' ';
+					revealedCount++;
 				} else {
-					// それ以外の数値があれば表示
-					td.textContent = count;
+					// 周りに地雷がある安全マス
+					td.textContent = bomb;
+					revealedCount++;
+				}
+
+				td.classList.add('revealed');
+
+				// すべての安全マスを開いたかチェック
+				if (revealedCount === safeCount) {
+					// ゲームクリア画面に遷移
+					window.location.href = '/gameclear';
 				}
 			});
 
