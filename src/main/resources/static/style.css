@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 /*トップページ*/
 /*inde.htmlのレイアウト*/
 .top h1 {
@@ -18,7 +21,10 @@ ul {
 	margin: 100px 80px 60px 40px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 /*ゲーム画面*/
 .game-body {
 	background-color: #1e1e2f;
@@ -43,7 +49,10 @@ color: #333;
 	background-color: #d9534f;
 	color: #fff;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 
 /*.gameover.htmlのレイアウト*/
 .gameover-body h1 {
@@ -65,6 +74,7 @@ color: #333;
 	border-radius: 20px;
 }
 
+<<<<<<< HEAD
 
 /*edit.htmlのレイアウト*/
 .edit-body h1{
@@ -102,3 +112,15 @@ color: #333;
 
 
 
+=======
+/*.gameclear.htmlのレイアウト*/
+.gameclear-body {
+  background-color: #1e1e2f;
+  color: #80ffff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2rem;
+  margin: 200px auto 60px auto;
+  font-size: 30px;
+}
+>>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
