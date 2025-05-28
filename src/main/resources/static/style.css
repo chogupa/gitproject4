@@ -1,16 +1,32 @@
-<<<<<<< HEAD
-/*トップページ*/
-=======
+/*スタート画面に戻るボタン*/
+.start-button {
+	margin: 150px 80px 60px 40px;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 20px;
+}
+
+/*ユーザーが入力するテキストボックス*/
+.textbox {
+	width: 400px;
+	height: 20px;
+	display: block;
+	margin: 0 auto;
+	font-size: 15px;
+	padding: 5px; 
+	
+}
+
+
+
+
 /*inde.htmlのレイアウト*/
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
 .top h1 {
 	font-size: 70px;
 }
-
 ul {
 	list-style: none;
 }
-
 .index-body {
 	background-color: #1e1e2f;
 	color: #eee;
@@ -20,7 +36,7 @@ ul {
 	margin: 100px 80px 60px 40px;
 }
 
-<<<<<<< HEAD
+
 /*ゲーム画面*/
 .game-body {
 	background-color: #1e1e2f;
@@ -45,10 +61,9 @@ color: #333;
 	background-color: #d9534f;
 	color: #fff;
 }
-=======
 
-/*.gameover.htmlのレイアウト*/
-h1 {
+/*gameover.htmlのレイアウト*/
+.gameover-body h1 {
 	font-size: 50px;
 }
 .gameover-body {
@@ -60,12 +75,39 @@ h1 {
   margin: 200px 80px 60px 40px;
   font-size: 30px;
 }
-.start-button {
-	margin: 150px 80px 60px 40px;
-	padding: 15px 30px;
+
+
+
+/*edit.htmlのレイアウト*/
+.edit-body h1{
+	font-size: 50px;
+}
+.edit-body {
+	background-color: #1e1e2f;
+	  color: white;
+	  font-family: 'Courier New', Courier, monospace;
+	  text-align: center;
+	  padding: 2rem;
+	  margin: 200px 80px 60px 40px;
+	  font-size: 30px;	
+	  border-radius: 10px;
+	  	max-width: 100%;
+}
+.update-button {
+	margin: 5px 10px;
+	padding: 10px 15px;
 	font-size: 15px;
 	border-radius: 20px;
 }
 
 
->>>>>>> branch 'HTML' of https://github.com/chogupa/gitproject4.git
+/*.gameclear.htmlのレイアウト*/
+.gameclear-body {
+  background-color: #1e1e2f;
+  color: #80ffff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2rem;
+  margin: 200px auto 60px auto;
+  font-size: 30px;
+}
