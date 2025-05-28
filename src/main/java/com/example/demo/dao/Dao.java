@@ -18,7 +18,7 @@ public class Dao {
 		this.db = db;
 	}
 //	データのアップロード
-	public void insertDao(EntForm rntform) {
+	public void insertDao() {
 		db.update("INSERT INTO minesweeper (flag,comment,bomb,count) VALUES(0,'仮',0,0)");
 	}
 	
