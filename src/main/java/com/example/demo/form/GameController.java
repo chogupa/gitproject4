@@ -78,12 +78,33 @@ public class GameController {
 	@RequestMapping("confirm")
 
 	public String confirm(@PathVariable Long id,@Validated Input input,BindingResult result,Model model) {
-	    EntForm entform = new EntForm();
-		
-		entform.setComment(input.getComment());
-		dao.updateDao(id,entform);
+		if (result.hasErrors()) {
+			List<EntForm> list=dao.getOne(id);
+			EntForm entformdb=list.get(0);
+			model.addAttribute("form",entformdb);
+			model.addAttribute("input",input);
+			return "edit_error";
+		}
 		return "confirm";
 	}
+	@RequestMapping("complete")
+	public String complete(@PathVariable Long id,Input input,Model model) {
+		EntForm entform = new EntForm();	
+		entform.setComment(input.getComment());
+		dao.updateDao(id,entform);
+		return "game";
+	}
+	
+	@RequestMapping("back")
+	public String back(@PathVariable Long id,Input input,Model model) {
+		List<EntForm> list=dao.getOne(id);
+		EntForm entformdb=list.get(0);
+		model.addAttribute("form",entformdb);
+		model.addAttribute("input",input);
+		return "edit";
+		
+	}
+	
 
 
 	
