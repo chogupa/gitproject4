@@ -14,19 +14,21 @@
 	display: block;
 	margin: 0 auto;
 	font-size: 15px;
-	padding: 5px; 
-	
+	padding: 5px;
+
 }
 
 /*inde.htmlのレイアウト*/
 .top h1 {
 	font-size: 70px;
 }
+
 ul {
 	list-style: none;
 	margin: 50px auto;
 	padding: 0;
 }
+
 .index-body {
 	background-color: #1e1e2f;
 	color: #eee;
@@ -46,17 +48,17 @@ ul {
 	min-height: 100vh;
 }
 
-.game-board td{
-background-color: #c0c0c0;
-color: #333;
+.game-board td {
+	background-color: #c0c0c0;
+	color: #333;
 }
 
-.game-board td.revealed{
+.game-board td.revealed {
 	background-color: #888888;
 	color: #000;
 }
 
-.game-board td.flagged{
+.game-board td.flagged {
 	background-color: #d9534f;
 	color: #fff;
 }
@@ -65,49 +67,67 @@ color: #333;
 .gameover-body h1 {
 	font-size: 50px;
 }
+
 .gameover-body {
-  background-color: #1e1e2f;
-  color: #FF8C00;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  padding: 2rem;
-  margin: 200px auto 60px auto;
-  font-size: 30px;
+	background-color: #1e1e2f;
+	color: #FF8C00;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	margin: 200px auto 60px auto;
+	font-size: 30px;
 }
 
 
 /*edit.htmlとconfilm.htmlのレイアウト*/
 .Ebody-Cbody {
 	background-color: #1e1e2f;
-	  color: white;
-	  font-family: 'Courier New', Courier, monospace;
-	  text-align: center;
-	  padding: 2rem;
-	  margin: 100px auto 60px auto;
-	  font-size: 30px;	
-	  border-radius: 10px;
-	  	max-width: 100%;
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	margin: 100px auto 60px auto;
+	font-size: 30px;
+	border-radius: 10px;
+	max-width: 100%;
 }
 
 .update-button {
-	margin: 5px auto 5px auto 60px auto 60px auto;
+	margin: 30px auto 60px auto 60px auto 5px auto;
 	padding: 15px 30px;
 	font-size: 15px;
 	border-radius: 20px;
+	width: 110px;
+}
+
+.confilm-button {
+	margin: 5px auto 60px auto 60px auto 30px auto;
+	padding: 15px 10px;
+	font-size: 15px;
+	border-radius: 20px;
+	width: 90px;
 }
 
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body h1 {
 	font-size: 50px;
 }
+
 .gameclear-body {
-  background-color: #1e1e2f;
-  color: #00FFFF;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  padding: 2rem;
-  margin: 200px auto 60px auto;
-  font-size: 30px;
+	background-color: #1e1e2f;
+	color: #00FFFF;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	padding: 2rem;
+	margin: 200px auto 60px auto;
+	font-size: 30px;
+}
+
+.game-board {
+	width: 200px;
+	height: 200px;
+	margin: 200px auto 60px auto;
+
 }
 
 /*ゲーム画面に飛ぶ*/
