@@ -70,9 +70,14 @@ public class GameController {
 		return "edit";
 	}
 	@RequestMapping("confirm")
-	public String confirm() {
+	public String confirm(Input input,Model model) {
+	    EntForm entform = new EntForm();
+		
+		entform.setComment(input.getComment());
+		dao.insertDao(entform);
 		return "confirm";
 	}
+
 
 	
 }
