@@ -1,13 +1,30 @@
 /*トップページ*/
+/*スタート画面に戻るボタン*/
+.start-button {
+	margin: 150px 80px 60px 40px;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 20px;
+}
+
+/*ユーザーが入力するテキストボックス*/
+.textbox {
+	width: 400px;
+	height: 20px;
+	display: block;
+	margin: 0 auto;
+	font-size: 15px;
+	padding: 5px; 
+	
+}
+
 /*inde.htmlのレイアウト*/
 .top h1 {
 	font-size: 70px;
 }
-
 ul {
 	list-style: none;
 }
-
 .index-body {
 	background-color: #1e1e2f;
 	color: #eee;
@@ -42,7 +59,6 @@ color: #333;
 	color: #fff;
 }
 
-/*.gameover.htmlのレイアウト*/
 .gameover-body h1 {
 	font-size: 50px;
 }
@@ -55,29 +71,12 @@ color: #333;
   margin: 200px 80px 60px 40px;
   font-size: 30px;
 }
-.start-button {
-	margin: 150px 80px 60px 40px;
-	padding: 15px 30px;
-	font-size: 15px;
-	border-radius: 20px;
-}
 
 
 /*edit.htmlのレイアウト*/
 .edit-body h1{
 	font-size: 50px;
 }
-
-.textbox {
-	width: 400px;
-	height: 20px;
-	display: block;
-	margin: 0 auto;
-	font-size: 15px;
-	padding: 5px; 
-	
-}
-
 .edit-body {
 	background-color: #1e1e2f;
 	  color: white;
@@ -89,13 +88,13 @@ color: #333;
 	  border-radius: 10px;
 	  	max-width: 100%;
 }
-
 .update-button {
 	margin: 5px 10px;
 	padding: 10px 15px;
 	font-size: 15px;
 	border-radius: 20px;
 }
+
 
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body {
