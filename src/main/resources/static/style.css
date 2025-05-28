@@ -1,6 +1,7 @@
 /*トップページ*/
 /*スタート画面に戻るボタン*/
 .start-button {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
 	margin: 150px auto 60px auto;
 	padding: 15px 30px;
 	font-size: 15px;
@@ -96,6 +97,7 @@ ul {
 }
 
 .update-button {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
 	margin: 30px auto 60px auto 60px auto 5px auto;
 	padding: 15px 30px;
 	font-size: 15px;
@@ -104,6 +106,7 @@ ul {
 }
 
 .confilm-button {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
 	margin: 5px auto 60px auto 60px auto 30px auto;
 	padding: 15px 10px;
 	font-size: 15px;
@@ -135,6 +138,7 @@ ul {
 
 /*ゲーム画面に飛ぶ*/
 .s-button {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
 	margin: 30px auto 60px auto;
 	padding: 15px 30px;
 	font-size: 15px;
