@@ -35,7 +35,7 @@
 
 				safeCount++;
 			}
-		});
+		};
 
 		let revealedCount = 0; // 開いた安全マスのカウンター
 
@@ -56,9 +56,9 @@
 					td.textContent = '💣';
 					td.style.backgroundColor = 'red';
 					window.location.href = '/gameover';
-				}  else {
+				} 
 					// 周りに地雷がある安全マス
-				} else {
+				else{
 					td.textContent = count === '0' ? '0' : count;
 					revealedCount++;
 				}
