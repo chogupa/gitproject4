@@ -18,8 +18,8 @@ public class Dao {
 		this.db = db;
 	}
 //	データのアップロード
-	public void insertDao() {
-		db.update("INSERT INTO minesweeper (flag,comment,bomb,count) VALUES(0,'仮',0,0)");
+	public void insertDao(int id) {
+			db.update("INSERT INTO minesweeper (id,flag,comment,bomb,count) VALUES(?,0,'仮',0,0)",id);
 	}
 	
 	public List<EntForm> getAll() {
@@ -80,5 +80,9 @@ public class Dao {
 		//Controllerに渡す
 		return resultDb2;
 
+	}
+	
+	public void deleteAll() {
+		db.update("delete from minesweeper");
 	}
 }
