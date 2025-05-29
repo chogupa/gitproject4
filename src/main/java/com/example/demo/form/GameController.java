@@ -70,7 +70,7 @@ public class GameController {
 	public String gameover() {
 		return "gameover";
 	}
-	@RequestMapping("edit")
+	@RequestMapping("edit/{id}")
 	public String edit(Model model,@PathVariable Long id) {
 		List<EntForm> list=dao.getOne(id);
 		EntForm entformdb=list.get(0);
@@ -78,7 +78,7 @@ public class GameController {
 		return "edit";
 	}
 	
-	@RequestMapping("confirm")
+	@RequestMapping("confirm/{id}")
 
 	public String confirm(@PathVariable Long id,@Validated Input input,BindingResult result,Model model) {
 		if (result.hasErrors()) {
@@ -119,3 +119,4 @@ public class GameController {
 
 	
 }
+
