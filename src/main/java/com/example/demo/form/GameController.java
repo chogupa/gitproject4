@@ -109,7 +109,12 @@ public class GameController {
 		
 	}
 	
-
+	@RequestMapping("regame")
+		public String regame(Model model) {
+		List<EntForm> listMine = dao.getAll();
+		model.addAttribute("dbList", listMine);
+		return "game";
+	}
 
 	
 }
