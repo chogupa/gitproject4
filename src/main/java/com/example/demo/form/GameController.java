@@ -75,6 +75,7 @@ public class GameController {
 		List<EntForm> list=dao.getOne(id);
 		EntForm entformdb=list.get(0);
 		model.addAttribute("form",entformdb);
+
 		return "edit";
 	}
 	
@@ -86,17 +87,18 @@ public class GameController {
 			EntForm entformdb=list.get(0);
 			model.addAttribute("form",entformdb);
 			model.addAttribute("input",input);
+			
 			return "edit_error";
 		}
 		return "confirm";
 	}
-	@RequestMapping("complete")
-	public String complete(@PathVariable Long id,Input input,Model model) {
-		EntForm entform = new EntForm();	
-		entform.setComment(input.getComment());
-		dao.updateDao(id,entform);
-		return "game";
-	}
+//	@RequestMapping("complete")
+//	public String complete(@PathVariable Long id,Input input,Model model) {
+//		EntForm entform = new EntForm();	
+//		entform.setComment(input.getComment());
+//		dao.updateDao(id,entform);
+//		return "game";
+//	}
 	
 	@RequestMapping("back")
 	public String back(@PathVariable Long id,Input input,Model model) {
@@ -109,13 +111,27 @@ public class GameController {
 		
 	}
 	
-	@RequestMapping("/regame")
-		public String regame(Model model) {
+	@RequestMapping("/regame/{id}")
+		public String regame(@PathVariable Long id,Input input,Model model) {
+		
+		List<EntForm> list=dao.getOne(id);
+		EntForm entformdb=list.get(0);	
+		entformdb.setComment(input.getComment());
+		dao.updateDao(id,entformdb);
 		List<EntForm> listMine = dao.getAll();
 		model.addAttribute("dbList", listMine);
+		System.out.println(input.getComment());
 		return "game";
 //		regameの追加
 	}
+	
+	@RequestMapping("/regame2/{id}")
+	public String regame2(Model model) {
+		List<EntForm> listMine = dao.getAll();
+		model.addAttribute("dbList", listMine);
+		return "game";
+	}
+	
 
 	
 }
