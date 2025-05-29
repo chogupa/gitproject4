@@ -1,0 +1,8 @@
+CREATE TABLE minesweeper(
+	id INT NOT NULL AUTO_INCREMENT,
+	flag INT NOT NULL,
+	comment TEXT NOT NULL,
+	bomb INT NOT NULL,
+	count INT NOT NULL,
+	PRIMARY KEY(id)
+);
