@@ -33,7 +33,9 @@ public class GameController {
 	@RequestMapping("game")
 	public String game(Model model) {
 		int masume = 5;
+//		再読み込み後にidがずれないようにデータ削除
 		dao.deleteAll();
+//		AUTOでidを挿入するとずれるので、こちらで入れるように変更
 		for(int i=1;i<=masume*masume;i++) {
 			dao.insertDao(i);
 		}
