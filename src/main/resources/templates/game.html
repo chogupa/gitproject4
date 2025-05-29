@@ -43,13 +43,14 @@
 			// 地雷判定
 			if (bomb === '1') {
 				td.textContent = '💣';
-				td.style.backgroundColor = 'red';
+				td.style.backgroundColor = '#ff4d4d ';
 				window.location.href = '/gameover';
 			}
 			// 周りに地雷がある安全マス
 			else {
 				td.textContent = count === '0' ? '0' : count;
 				revealedCount++;
+				td.classList.add('revealed-safe');
 			}
 
 			// すべての安全マスを開いたかチェック
