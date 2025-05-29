@@ -98,8 +98,7 @@
 						flaggedCells.push(cellId);
 					}
 
-					// 編集画面に遷移
-					window.location.href = `/edit/${cellId}`;
+
 				}
 
 				localStorage.setItem('flaggedCells', JSON.stringify(flaggedCells));
@@ -129,6 +128,9 @@
 				if (td.dataset.revealed === 'true') return;
 
 				toggleFlag(td);
+
+				// 編集画面に遷移
+				window.location.href = `/edit/${cellId}`;
 			});
 
 		});
