@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-</a lang="ja">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>マインスイーパー - トップ</title>
-	<link rel="stylesheet" href="../../static/style.css" th:href="@{/style.css}">
+	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
+		rel="stylesheet">
 </head>
 
-<body>
-	<div class="container">
-		<h1>マインスイーパー</h1>
+<body class="index-body">
+	<div class="top container">
+		<h1>MineSweeper</h1>
 
 		<section class="instructions">
 			<h2>操作方法</h2>
@@ -20,11 +23,10 @@
 				<li>うう</li>
 			</ul>
 		</section>
-
-		<div class="buttons">
-			<a href="/" class="button start">ゲーム開始</a>
-			<a href="/" class="button records">記録</a>
-		</div>
+		<form action="#" method="get" th:action="@{game}">
+			<input type="submit" value="ゲーム開始" class="s-button">
+		</form>
 	</div>
 </body>
+
 </html>

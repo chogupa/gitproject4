@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ゲーム画面</title>
+	<link rel="stylesheet" href="../../static/style.css" th:href="@{/style.css}">
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="game-body">
+	<table class="game-board">
+		<tr th:each="row : ${#numbers.sequence(0,4)}">
+			<td th:each="col : ${#numbers.sequence(0,4)}" th:with="cell=${dbList[row * 5 + col]}"
+				th:attr="data-id=${cell.id}, data-flag=${cell.flag}, data-bomb=${cell.bomb}, data-count=${cell.count}"
+				th:text="' '">
+			</td>
+		</tr>
+	</table>
+
+	
+	<script>
+		//全てのマスを取得
+		const allTds = document.querySelectorAll('td[data-id]');
+
+		// 安全マスの総数をカウント
+		let safeCount = 0;
+		allTds.forEach(td => {
+			const bomb = td.getAttribute('data-count');
+			if (bomb !== '1') { // '2'以外が安全マス
+				safeCount++;
+			}
+		});
+
+		let revealedCount = 0; // 開いた安全マスのカウンター
+
+		const revealCell = (td,bomb,count) =>{
+			let revealed = false; //マスが開いてるか
+			let flagged = false; //旗が立っているか
+
+				if (revealed || flagged) return; // すでに開いてる・旗ある
+				
+				revealed = true;
+				if (bomb === '1') {
+					// 地雷判定
+					td.textContent = '💣';
+					td.style.backgroundColor = 'red';
+					// ゲームオーバー画面
+					window.location.href = '/gameover';
+				}  else {
+					// 周りに地雷がある安全マス
+					td.textContent = count === '0' ? '0' : count;
+					revealedCount++;
+				}
+
+				// すべての安全マスを開いたかチェック
+				if (revealedCount === safeCount) {
+					// ゲームクリア画面に遷移
+					window.location.href = '/gameclear';
+				}
+			};
+			
+			allTds.forEach(td => {
+				const count = td.getAttribute('data-count');
+				const bomb = td.getAttribute('data-bomb');   // 地雷かどうか
+			
+			// 左クリックで開く
+						td.addEventListener('click', () => revealCell(td,bomb,count));
+
+			// 右クリックで旗を立てる
+			td.addEventListener('contextmenu', e => {
+				e.preventDefault(); //メニュー出ないように
+				if (revealed) return;
+
+				flagged = !flagged; //旗を立てる・外す
+				if (flagged) {
+					td.classList.add('flagged');
+					td.textContent = '🚩';
+				} else {
+					td.classList.remove('flagged');
+					td.textContent = '';
+				}
+			});
+		});
+	</script>
+	
+</body>
+</html>

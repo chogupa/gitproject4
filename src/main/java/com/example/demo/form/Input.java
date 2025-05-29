@@ -1,8 +1,11 @@
-package com.example.demo.entity;
+package com.example.demo.form;
 
-public class EntForm {
+import jakarta.validation.constraints.Size;
+
+public class Input {
 	private int id;
 	private int flag;
+	@Size(min=0,message="コメントを１文字以上入力してください")
 	private String comment;
 	private int bomb;
 	private int count;
@@ -36,7 +39,7 @@ public class EntForm {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
-
 	
+	
+
 }
