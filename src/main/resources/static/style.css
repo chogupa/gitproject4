@@ -21,6 +21,7 @@
 
 /*inde.htmlのレイアウト*/
 .top h1 {
+	color: #007FFF;
 	font-family: 'Share Tech Mono', monospace, sans-serif;
 	font-size: 70px;
 }
