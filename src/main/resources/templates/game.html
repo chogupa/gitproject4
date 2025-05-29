@@ -80,6 +80,8 @@
 						td.dataset.flagged = 'true';
 						td.classList.add('flagged');
 						td.textContent = '🚩';
+						const cellId = td.getAttribute('data-id'); // セルのIDを取得
+						window.location.href = `/edit/${cellId}`;  // ID付きのURLに遷移
 					}
 				});
 			});
