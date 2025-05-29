@@ -2,27 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>編集ページ</title>
+	<title>編集エラー</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
-		rel="stylesheet">
 </head>
 
 <body class="Ebody-Cbody">
 	<!--	<h1 th:text="${title}"></h1>-->
 	<h1>編集画面</h1>
-	<div th:object="${form}">
+	<div th:object="${input}">
 		<form action="#" method="get" th:action="@{confirm/{id}(id=${form.id})}">
 			<p>追加するコメント</p>
+			<!--以下バリデーション-->
 			<p><input type="text" class="textbox" name="comment" th:value="*{comment}"></p>
+			<div th:if="${#fields.hasErrors('message')}" th:errors="*{comment}" style="color: red;">エラー</div>
+			
 			<input type="submit" class="update-button" value="更新">
 		</form>
 
 		<form action="#" method="get" th:action="@{game}">
 			<input type="submit" class="s-button" value="やめる" >
-
 
 		</form>
 	</div>

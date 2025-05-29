@@ -39,12 +39,11 @@ public class GameController {
 		Minesweeper minesweeper = new Minesweeper(masume);
 		ArrayList<Integer>list = minesweeper.generateMinesweeper();
 		for(int i=0;i<list.size();i++) {
-			List<EntForm> list1 = dao.getOne((long)list.get(i));
-			EntForm entformdb=list1.get(0);
-		
-			entformdb.setBomb(entformdb.getBomb()+1);
-			dao.updateDao((long) i, entformdb);
-		
+			long id = list.get(i) + 1;
+			List<EntForm> list1 = dao.getOne(id);
+			EntForm entformdb = list1.get(0);
+			entformdb.setBomb(1); // +1しなくてOK
+			dao.updateDao(id, entformdb);
 		}
 		ArrayList<Integer> minecount = minesweeper.MineCount(list);
 		
@@ -53,7 +52,7 @@ public class GameController {
 			List<EntForm> list2= dao.getOne((long)i+1);
 			EntForm entformdb=list2.get(0);
 			entformdb.setCount(minecount.get(i));
-			dao.updateDao((long)i, entformdb);
+			dao.updateDao((long)i+1, entformdb);
 		
 		}
 		List<EntForm> listMine = dao.getAll();
@@ -75,6 +74,7 @@ public class GameController {
 		model.addAttribute("form",entformdb);
 		return "edit";
 	}
+	
 	@RequestMapping("confirm")
 
 	public String confirm(@PathVariable Long id,@Validated Input input,BindingResult result,Model model) {
