@@ -162,3 +162,37 @@ ul {
 	font-size: 15px;
 	border-radius: 20px;
 }
+
+
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .tooltip-button {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .tooltip-popup {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      background-color: #f0f0f0;
+      color: #333;
+      border: 1px solid #999;
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+  }
+
+
+  /* ★ ホバーした時に表示 */
+  .tooltip-container:hover .tooltip-popup {
+    display: block;
+  }
+
