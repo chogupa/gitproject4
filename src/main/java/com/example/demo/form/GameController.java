@@ -33,8 +33,9 @@ public class GameController {
 	@RequestMapping("game")
 	public String game(Model model) {
 		int masume = 5;
-		for(int i=0;i<masume*masume;i++) {
-			dao.insertDao();
+		dao.deleteAll();
+		for(int i=1;i<=masume*masume;i++) {
+			dao.insertDao(i);
 		}
 		Minesweeper minesweeper = new Minesweeper(masume);
 		ArrayList<Integer>list = minesweeper.generateMinesweeper();
