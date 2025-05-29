@@ -19,7 +19,7 @@
 		<p>を変更します。よろしいですか？</p>
 	</div>
 
-	<form method="post" action="#" th:action="@{/game}" th:object="${input}">
+	<form method="post" action="#" th:action="@{/regame}" th:object="${input}">
 		<input type="hidden" name="comment" th:value="*{comment}">
 		<input type="submit" value="はい" class="s-button">
 	</form>
