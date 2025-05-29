@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dao.Dao;
@@ -39,11 +41,12 @@ public class GameController {
 		Minesweeper minesweeper = new Minesweeper(masume);
 		ArrayList<Integer>list = minesweeper.generateMinesweeper();
 		for(int i=0;i<list.size();i++) {
-			long id = list.get(i) + 1;
-			List<EntForm> list1 = dao.getOne(id);
-			EntForm entformdb = list1.get(0);
-			entformdb.setBomb(1); // +1しなくてOK
-			dao.updateDao(id, entformdb);
+			List<EntForm> list1 = dao.getOne((long)list.get(i));
+			EntForm entformdb=list1.get(0);
+		
+			entformdb.setBomb(entformdb.getBomb()+1);
+			dao.updateDao((long) i, entformdb);
+		
 		}
 		ArrayList<Integer> minecount = minesweeper.MineCount(list);
 		
@@ -52,7 +55,7 @@ public class GameController {
 			List<EntForm> list2= dao.getOne((long)i+1);
 			EntForm entformdb=list2.get(0);
 			entformdb.setCount(minecount.get(i));
-			dao.updateDao((long)i+1, entformdb);
+			dao.updateDao((long)i, entformdb);
 		
 		}
 		List<EntForm> listMine = dao.getAll();
@@ -67,23 +70,39 @@ public class GameController {
 	public String gameover() {
 		return "gameover";
 	}
-	@RequestMapping("edit")
+	@RequestMapping("edit/{id}")
 	public String edit(Model model,@PathVariable Long id) {
 		List<EntForm> list=dao.getOne(id);
 		EntForm entformdb=list.get(0);
 		model.addAttribute("form",entformdb);
+
 		return "edit";
 	}
-	
-	@RequestMapping("confirm")
+	@PostMapping("confirm/{id}")
+	public String confirm(@PathVariable Long id, @Validated Input input, BindingResult result, Model model) {
+	    if (result.hasErrors()) {
+	        // 入力チェックに引っかかっていたら編集画面に戻す
+	        return "edit";
+	    }
 
-	public String confirm(@PathVariable Long id,@Validated Input input,BindingResult result,Model model) {
-	    EntForm entform = new EntForm();
-		
-		entform.setComment(input.getComment());
-		dao.updateDao(id,entform);
-		return "confirm";
+	    // 編集フォームの入力内容を画面に渡す（表示用）
+	    model.addAttribute("input", input);
+
+	    // ここではDBはまだ更新しない（確定ボタンが押されるまでは）
+	    return "confirm"; // 確認ページ表示
 	}
+	@PostMapping("game")
+	public String updateAndReturnToGame(@ModelAttribute Input input) {
+	    List<EntForm> list = dao.getOne((long)input.getId());
+	    if (!list.isEmpty()) {
+	        EntForm entformdb = list.get(0);
+	        entformdb.setComment(input.getComment());
+	        dao.updateDao((long)input.getId(), entformdb);
+	    }
+	    return "redirect:/game";
+	}
+
+
 
 
 	

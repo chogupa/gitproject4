@@ -16,7 +16,6 @@
 	margin: 0 auto;
 	font-size: 15px;
 	padding: 5px;
-
 }
 
 /*inde.htmlのレイアウト*/
@@ -69,19 +68,24 @@ ul {
 	color: #000;
 }
 
-.game-board td.flagged {
-	background-color: #4A646C; /* スレートグレー */
-		color: #00FFFF;           /* ネオンシアン */
-		font-size: 28px;
-		font-weight: bold;
-		text-shadow:
-		0 0 3px #00FFFF,
-		0 0 6px #00FFFF;
+.game-board td.revealed-safe{
+	background-color: #1DE9B6;
+	color: #000;
 }
+
+.game-board td.flagged {
+	background-color: #4A646C; 
+	color: #00FFFF;         
+	font-size: 28px;
+	font-weight: bold;
+	text-shadow:
+	0 0 3px #00FFFF,
+	0 0 6px #00FFFF;
+	}
 
 /*gameover.htmlのレイアウト*/
 .gameover-body h1 {
-	font-family: 'Share Tech Mono', monospace, sans-serif;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	font-size: 50px;
 }
 
@@ -130,7 +134,7 @@ ul {
 
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body h1 {
-	font-family: 'Share Tech Mono', monospace, sans-serif;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	font-size: 50px;
 }
 
