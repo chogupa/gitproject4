@@ -34,52 +34,49 @@
 
 		let revealedCount = 0; // 開いた安全マスのカウンター
 
-		const revealCell = (td,bomb,count) =>{
-			let revealed = false; //マスが開いてるか
-			let flagged = false; //旗が立っているか
+		const revealCell = (td, bomb, count) => {
+				if (td.dataset.revealed === 'true' || td.dataset.flagged === 'true') return;
 
-				if (revealed || flagged) return; // すでに開いてる・旗ある
-				
-				revealed = true;
+				td.dataset.revealed = 'true';
+
 				if (bomb === '1') {
-					// 地雷判定
 					td.textContent = '💣';
 					td.style.backgroundColor = 'red';
-					// ゲームオーバー画面
 					window.location.href = '/gameover';
-				}  else {
-					// 周りに地雷がある安全マス
+				} else {
 					td.textContent = count === '0' ? '0' : count;
 					revealedCount++;
 				}
 
-				// すべての安全マスを開いたかチェック
 				if (revealedCount === safeCount) {
-					// ゲームクリア画面に遷移
 					window.location.href = '/gameclear';
 				}
 			};
-			
+
 			allTds.forEach(td => {
 				const count = td.getAttribute('data-count');
-				const bomb = td.getAttribute('data-bomb');   // 地雷かどうか
-			
-			// 左クリックで開く
-						td.addEventListener('click', () => revealCell(td,bomb,count));
+				const bomb = td.getAttribute('data-bomb');
 
-			// 右クリックで旗を立てる
-			td.addEventListener('contextmenu', e => {
-				e.preventDefault(); //メニュー出ないように
-				if (revealed) return;
+				// 左クリックで開く
+				td.addEventListener('click', () => revealCell(td, bomb, count));
 
-				flagged = !flagged; //旗を立てる・外す
-				if (flagged) {
-					td.classList.add('flagged');
-					td.textContent = '🚩';
-				} else {
-					td.classList.remove('flagged');
-					td.textContent = '';
-				}
+				// 右クリックで旗を立てる
+				td.addEventListener('contextmenu', e => {
+					e.preventDefault();
+					if (td.dataset.revealed === 'true') return;
+
+					if (td.dataset.flagged === 'true') {
+						td.dataset.flagged = 'false';
+						td.classList.remove('flagged');
+						td.textContent = '';
+					} else {
+						td.dataset.flagged = 'true';
+						td.classList.add('flagged');
+						td.textContent = '🚩';
+				} //else {
+					//td.classList.remove('flagged');
+					//td.textContent = '';
+				//}
 			});
 		});
 	</script>
