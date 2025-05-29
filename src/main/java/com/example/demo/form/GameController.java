@@ -109,7 +109,7 @@ public class GameController {
 		
 	}
 	
-	@RequestMapping("regame")
+	@RequestMapping("/regame")
 		public String regame(Model model) {
 		List<EntForm> listMine = dao.getAll();
 		model.addAttribute("dbList", listMine);
