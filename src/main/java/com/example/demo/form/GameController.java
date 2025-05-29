@@ -114,6 +114,7 @@ public class GameController {
 		List<EntForm> listMine = dao.getAll();
 		model.addAttribute("dbList", listMine);
 		return "game";
+//		regameの追加
 	}
 
 	
