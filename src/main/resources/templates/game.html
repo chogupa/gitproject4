@@ -43,13 +43,13 @@
 
 		const revealCell = (td, bomb, count) => {
 			
-			const longPressDuration = 300; // ミリ秒
+			const longPressDuration = 300; // 300ミリ秒
 			let pressTimer = null;
 
 			allTds.forEach(td => {
 				const cellId = td.getAttribute('data-id');
 
-				// マウス・タッチ対応の長押し
+				// 長押しの処理
 				td.addEventListener('mousedown', e => {
 					if (e.button !== 0) return; // 左クリック以外は無視（右クリックは既に旗処理がある）
 					pressTimer = setTimeout(() => {
@@ -98,9 +98,10 @@
 				window.location.href = '/gameclear';
 			}
 		};
+		//データ（周りにある地雷の数、または地雷）の読み込み
 		allTds.forEach(td => {
 			const count = td.getAttribute('data-count');
-			const bomb = td.getAttribute('data-bomb');   // 地雷かどうか
+			const bomb = td.getAttribute('data-bomb');   
 
 
 			// 左クリックで開く
@@ -108,7 +109,7 @@
 
 
 
-			// 右クリックで旗を立てる
+			// 右クリックの操作
 			function toggleFlag(td) {
 				const cellId = td.getAttribute('data-id');
 				let flaggedCells = JSON.parse(localStorage.getItem('flaggedCells')) || [];
@@ -130,29 +131,17 @@
 
 
 				}
-
+　　　　　　　　//localStrageに空いたマス、旗を立てたマスの情報を保存
 				localStorage.setItem('flaggedCells', JSON.stringify(flaggedCells));
 			}
 
-			//			ここに初期化か否か判断
-			// ★ 追加：スタート画面から来たときだけ状態をリセット
+		
+			// ゲームの初期化を行うか判定
 			if (document.referrer.includes('/index') || document.referrer.includes('confirmreset')) {
 				localStorage.removeItem('flaggedCells');
 				localStorage.removeItem('revealedCells');
 			}
-
-
-			window.addEventListener('DOMContentLoaded', () => {
-				const flaggedCells = JSON.parse(localStorage.getItem('flaggedCells')) || [];
-				flaggedCells.forEach(id => {
-					const td = document.querySelector(`td[data-id="${id}"]`);
-					if (td) {
-						td.dataset.flagged = 'true';
-						td.classList.add('flagged');
-						td.textContent = '🚩';
-					}
-				});
-			});
+			//右クリック時に表示されるメニューを無効化
 			td.addEventListener('contextmenu', e => {
 				e.preventDefault();
 				if (td.dataset.revealed === 'true') return;
@@ -163,7 +152,7 @@
 			});
 
 		});
-		// ★ 追加: ページ読み込み時に状態復元
+		//  ページ読み込み時に旗の状態を復元
 		window.addEventListener('DOMContentLoaded', () => {
 			const flaggedCells = JSON.parse(localStorage.getItem('flaggedCells')) || [];
 			flaggedCells.forEach(id => {
@@ -174,9 +163,9 @@
 					td.textContent = '🚩';
 				}
 			});
-
+			//ページ読み込み時にマスの状態を復元
 			const revealedCells = JSON.parse(localStorage.getItem('revealedCells')) || [];
-			revealedCount = revealedCells.length; // ★ 追加: 開いたマス数を初期化
+			revealedCount = revealedCells.length; // 開いたマス数を初期化
 			revealedCells.forEach(id => {
 				const td = document.querySelector(`td[data-id="${id}"]`);
 				if (td && td.dataset.revealed !== 'true') {
@@ -195,7 +184,7 @@
 		});
 
 
-		// ツールチップ要素を作成
+		// 吹き出しを作成
 		const tooltip = document.createElement('div');
 		tooltip.className = 'tooltip-popup';
 		document.body.appendChild(tooltip);
@@ -217,11 +206,6 @@
 				tooltip.style.display = 'none';
 			});
 		});
-//長押しのイベント
-
-
-		// 編集画面に遷移
-						//window.location.href = `/edit/${cellId}`;
 	</script>
 
 </body>
