@@ -39,12 +39,14 @@ public class Minesweeper {
 	public ArrayList<Integer> MineCount(ArrayList<Integer> list) {
 		//		指定されたマス目の二次元配列を作成
 		boolean[][] mineField = new boolean[this.masu][this.masu];
-		//		地雷のあるマスをtruenに
 		for (int i = 0; i < this.mine; i++) {
+			//			地雷のあるマスのidをindexにセット
 			int index = list.get(i);
+			//			地雷のあるマスの二次元配列での座標を計算
 			int y = (int) index / this.masu;
 			//			int x = index - y * this.masu;
 			int x = index % this.masu;
+			//			地雷のあるマスの座標をtrueに
 			mineField[y][x] = true;
 		}
 
