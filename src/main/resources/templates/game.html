@@ -10,6 +10,8 @@
 </head>
 
 <body class="game-body">
+	
+	<p>💣：4個</p>
 	<table class="game-board">
 		<tr th:each="row : ${#numbers.sequence(0,4)}">
 			<td th:each="col : ${#numbers.sequence(0,4)}" th:with="cell=${dbList[row * 5 + col]}"
