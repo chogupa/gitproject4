@@ -11,22 +11,21 @@
 	<!--	<h1 th:text="${title}"></h1>-->
 	<h1>編集画面</h1>
 	<div th:object="${form}">
-		<form action="#" method="get" th:action="@{confirm/{id}(id=${form.id})}">
-			<p>追加するコメント</p>
-			<!--以下バリデーション-->
-			<p><input type="text" class="textbox" name="comment" th:value="*{comment}"></p>
-			<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" style="color: red;">エラー</div>
-			
-			<input type="submit" class="update-button" value="更新">
-		</form>
+		<form action="#" method="get" th:action="@{/confirm/{id}(id=${form.id})}">
 	</div>
+	<!--以下バリデーション-->
 	<div th:object="${input}">
-
-		<form action="#" method="get" th:action="@{/regame2/{{id}(id=${input.id})}}">
-			<input type="submit" class="s-button" value="やめる" >
-
+		<p>追加するコメント</p>
+		<p><input type="text" class="textbox" name="comment" th:value="*{comment}"></p>
+		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" style="color: red;">エラー</div>
+		<input type="submit" class="update-button" value="更新">
 		</form>
 	</div>
+
+	<form action="#" method="get" th:action="@{/regame2}">
+		<input type="submit" class="s-button" value="やめる">
+	</form>
+
 
 
 

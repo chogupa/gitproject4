@@ -125,7 +125,7 @@ public class GameController {
 //		regameの追加
 	}
 	
-	@RequestMapping("/regame2/{id}")
+	@RequestMapping("/regame2")
 	public String regame2(Model model) {
 		List<EntForm> listMine = dao.getAll();
 		model.addAttribute("dbList", listMine);
