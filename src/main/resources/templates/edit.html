@@ -13,14 +13,14 @@
 <body class="Ebody-Cbody">
 	<!--	<h1 th:text="${title}"></h1>-->
 	<h1>編集画面</h1>
-	<div th:object="${form}">
-		<form action="#" method="get" th:action="@{confirm/{id}(id=${form.id})}">
+	<div>
+		<form action="#" method="post" th:action="@{/confirm/{id}(id=*{id})}"  th:object="${form}">
 			<p>追加するコメント</p>
 			<p><input type="text" class="textbox" name="comment" th:value="*{comment}"></p>
 			<input type="submit" class="update-button" value="更新">
 		</form>
 
-		<form action="#" method="get" th:action="@{game}">
+		<form action="#" method="get" th:action="@{/regame2/{{id}(id=${input.id})}}">
 			<input type="submit" class="s-button" value="やめる" >
 
 

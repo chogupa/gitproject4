@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Size;
 public class Input {
 	private int id;
 	private int flag;
-	@Size(min=0,message="コメントを１文字以上入力してください")
+	@Size(min=1,message="コメントを１文字以上入力してください")
 	private String comment;
 	private int bomb;
 	private int count;

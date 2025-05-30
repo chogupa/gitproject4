@@ -19,7 +19,7 @@ public class Dao {
 	}
 //	データのアップロード
 	public void insertDao(int id) {
-			db.update("INSERT INTO minesweeper (id,flag,comment,bomb,count) VALUES(?,0,'仮',0,0)",id);
+			db.update("INSERT INTO minesweeper (id,flag,comment,bomb,count) VALUES(?,0,'コメントを入力できます',0,0)",id);
 	}
 	
 	public List<EntForm> getAll() {

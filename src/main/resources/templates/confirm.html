@@ -19,12 +19,12 @@
 		<p>を変更します。よろしいですか？</p>
 	</div>
 
-	<form method="get" action="#" th:action="@{game}" th:object="${input}">
-		<input type="hidden" name="name" th:value="*{name}">
+	<form method="post" action="#" th:action="@{/regame/{id}(id=${input.id})}" th:object="${input}">
+		<input type="hidden" name="comment" th:value="*{comment}">
 		<input type="submit" value="はい" class="s-button">
 	</form>
-	<form method="get" action="#" th:action="@{edit}" th:object="${input}">
-		<input type="hidden" name="name" th:value="*{name}">
+	<form method="get" action="#" th:action="@{/edit/{id}(id=${input.id})}" th:object="${input}">
+		<input type="hidden" name="comment" th:value="*{comment}">
 		<input type="submit" value="いいえ" class="confilm-button">
 	</form>
 </body>
