@@ -18,6 +18,10 @@
 			</td>
 		</tr>
 	</table>
+	
+	<form method="post" action="#" th:action="@{confirmreset}">
+			<input type="submit" value="リセット" class="ResetButton">
+		</form>
 
 
 
@@ -104,9 +108,8 @@
 				localStorage.setItem('flaggedCells', JSON.stringify(flaggedCells));
 			}
 
-			//			ここに初期化か否か判断
-			// ★ 追加：スタート画面から来たときだけ状態をリセット
-			if (document.referrer.includes('/index') && document.referrer.includes('')) {
+			// スタート画面、リセット確認画面から来た場合は初期化
+			if (document.referrer.includes('/index') || document.referrer.includes('/confirmreset')) {
 				localStorage.removeItem('flaggedCells');
 				localStorage.removeItem('revealedCells');
 			}

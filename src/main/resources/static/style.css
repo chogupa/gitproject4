@@ -162,3 +162,13 @@ ul {
 	font-size: 15px;
 	border-radius: 20px;
 }
+
+
+/*リセットボタンのレイアウト*/
+.ResetButton {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
+		margin: 30px auto 60px auto;
+		padding: 15px 30px;
+		font-size: 15px;
+		border-radius: 20px;
+}
