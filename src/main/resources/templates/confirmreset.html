@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>リセット確認ページ</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="Ebody-Cbody">
+	<h1>リセットの確認</h1>
+	<!--	<h1 th:text="${title}"></h1>-->
+
+	<div>
+		<p>ゲームをリセットします。よろしいですか？</p>
+	</div>
+
+	<form method="get" action="#" th:action="@{/game}">
+		<input type="submit" value="はい" class="s-button">
+	</form>
+	<form method="get" action="#" th:action="@{/regame2/{{id}(id=${input.id})}}">
+		<input type="submit" value="いいえ" class="confilm-button">
+	</form>
+</body>
+
+</html>
