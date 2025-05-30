@@ -132,6 +132,12 @@ public class GameController {
 		return "game";
 	}
 //	regame2からidを除去
+	
+	@RequestMapping("/confirmreset")
+	public String confirmreset() {
+		return "confirmreset";
+	}
+
 
 	
 }

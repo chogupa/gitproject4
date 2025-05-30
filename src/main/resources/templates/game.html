@@ -13,17 +13,19 @@
 	<table class="game-board">
 		<tr th:each="row : ${#numbers.sequence(0,4)}">
 			<td th:each="col : ${#numbers.sequence(0,4)}" th:with="cell=${dbList[row * 5 + col]}"
-				th:attr="data-id=${cell.id}, data-flag=${cell.flag}, data-bomb=${cell.bomb}, data-count=${cell.count},data-comment=${cell.comment}"
+				th:attr="data-id=${cell.id}, data-flag=${cell.flag}, data-bomb=${cell.bomb}, data-count=${cell.count}"
 				th:text="' '">
 			</td>
 		</tr>
 	</table>
+	
+	<form method="post" action="#" th:action="@{confirmreset}">
+			<input type="submit" value="リセット" class="ResetButton">
+		</form>
 
 
 
 	<script>
-		
-			
 		//全てのマスを取得
 		const allTds = document.querySelectorAll('td[data-id]');
 
@@ -40,32 +42,6 @@
 		let revealedCount = 0; // 開いた安全マスのカウンター
 
 		const revealCell = (td, bomb, count) => {
-			
-			const longPressDuration = 300; // ミリ秒
-			let pressTimer = null;
-
-			allTds.forEach(td => {
-				const cellId = td.getAttribute('data-id');
-
-				// マウス・タッチ対応の長押し
-				td.addEventListener('mousedown', e => {
-					if (e.button !== 0) return; // 左クリック以外は無視（右クリックは既に旗処理がある）
-					pressTimer = setTimeout(() => {
-						window.location.href = `/edit/${cellId}`;
-					}, longPressDuration);
-				});
-
-				td.addEventListener('mouseup', () => {
-					clearTimeout(pressTimer);
-				});
-
-				td.addEventListener('mouseleave', () => {
-					clearTimeout(pressTimer);
-				});
-
-
-			});
-
 			//もしtrueなら(1度開かれているなら)そのままリターン
 			if (td.dataset.revealed === 'true' || td.dataset.flagged === 'true') return;
 			td.dataset.revealed = 'true';  //開かれてなけらばtrueを代入
@@ -132,9 +108,8 @@
 				localStorage.setItem('flaggedCells', JSON.stringify(flaggedCells));
 			}
 
-			//			ここに初期化か否か判断
-			// ★ 追加：スタート画面から来たときだけ状態をリセット
-			if (document.referrer.includes('/index') && document.referrer.includes('')) {
+			// スタート画面、リセット確認画面から来た場合は初期化
+			if (document.referrer.includes('/index') || document.referrer.includes('/confirmreset')) {
 				localStorage.removeItem('flaggedCells');
 				localStorage.removeItem('revealedCells');
 			}
@@ -157,7 +132,8 @@
 
 				toggleFlag(td);
 
-				
+				// 編集画面に遷移
+				window.location.href = `/edit/${cellId}`;
 			});
 
 		});
@@ -192,34 +168,6 @@
 			});
 		});
 
-
-		// ツールチップ要素を作成
-		const tooltip = document.createElement('div');
-		tooltip.className = 'tooltip-popup';
-		document.body.appendChild(tooltip);
-
-		allTds.forEach(td => {
-			td.addEventListener('mouseenter', (e) => {
-				const comment = td.getAttribute('data-comment');
-				if (comment && comment.trim() !== '') {
-					tooltip.textContent = comment;
-					tooltip.style.display = 'block';
-
-					const rect = td.getBoundingClientRect();
-					tooltip.style.left = `${rect.left + window.scrollX}px`;
-					tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 8}px`; // 上に表示
-				}
-			});
-
-			td.addEventListener('mouseleave', () => {
-				tooltip.style.display = 'none';
-			});
-		});
-//長押しのイベント
-
-
-		// 編集画面に遷移
-						//window.location.href = `/edit/${cellId}`;
 	</script>
 
 </body>
