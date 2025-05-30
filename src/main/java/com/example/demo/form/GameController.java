@@ -131,7 +131,7 @@ public class GameController {
 		model.addAttribute("dbList", listMine);
 		return "game";
 	}
-	
+//	regame2からidを除去
 
 	
 }
