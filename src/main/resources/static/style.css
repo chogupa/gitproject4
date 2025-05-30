@@ -16,11 +16,11 @@
 	margin: 0 auto;
 	font-size: 15px;
 	padding: 5px;
-
 }
 
 /*inde.htmlのレイアウト*/
 .top h1 {
+	color: #007FFF;
 	font-family: 'Share Tech Mono', monospace, sans-serif;
 	font-size: 70px;
 }
@@ -53,6 +53,14 @@ ul {
 .game-board td {
 	background-color: #c0c0c0;
 	color: #333;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+	border: 1px solid #999;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .game-board td.revealed {
@@ -60,14 +68,24 @@ ul {
 	color: #000;
 }
 
-.game-board td.flagged {
-	background-color: #d9534f;
-	color: #fff;
+.game-board td.revealed-safe{
+	background-color: #1DE9B6;
+	color: #000;
 }
+
+.game-board td.flagged {
+	background-color: #4A646C; 
+	color: #00FFFF;         
+	font-size: 28px;
+	font-weight: bold;
+	text-shadow:
+	0 0 3px #00FFFF,
+	0 0 6px #00FFFF;
+	}
 
 /*gameover.htmlのレイアウト*/
 .gameover-body h1 {
-	font-family: 'Share Tech Mono', monospace, sans-serif;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	font-size: 50px;
 }
 
@@ -116,7 +134,7 @@ ul {
 
 /*.gameclear.htmlのレイアウト*/
 .gameclear-body h1 {
-	font-family: 'Share Tech Mono', monospace, sans-serif;
+	font-family: 'DotGothic16', 'Noto Sans JP', Arial, sans-serif;
 	font-size: 50px;
 }
 
@@ -131,9 +149,9 @@ ul {
 }
 
 .game-board {
-	width: 200px;
-	height: 200px;
-	margin: 200px auto 60px auto;
+	width: 500px;
+	height: 500px;
+	margin: 100px auto 60px auto;
 }
 
 /*ゲーム画面に飛ぶ*/
@@ -144,3 +162,46 @@ ul {
 	font-size: 15px;
 	border-radius: 20px;
 }
+
+
+
+/*リセットボタンのレイアウト*/
+.ResetButton {
+	font-family: 'Share Tech Mono', 'DotGothic16', monospace, sans-serif;
+		margin: 30px auto 60px auto;
+		padding: 15px 30px;
+		font-size: 15px;
+		border-radius: 20px;
+}
+
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .tooltip-button {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .tooltip-popup {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      background-color: #f0f0f0;
+      color: #333;
+      border: 1px solid #999;
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+  }
+
+
+  /* ★ ホバーした時に表示 */
+  .tooltip-container:hover .tooltip-popup {
+    display: block;
+  }

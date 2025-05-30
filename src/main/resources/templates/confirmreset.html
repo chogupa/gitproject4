@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>確認ページ</title>
+	<title>リセット確認ページ</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 	<link
@@ -11,20 +11,18 @@
 </head>
 
 <body class="Ebody-Cbody">
-	<h1>変更内容の確認</h1>
+	<h1>リセットの確認</h1>
 	<!--	<h1 th:text="${title}"></h1>-->
 
-	<div th:object="${input}">
-		<p th:text="*{comment}"></p>
-		<p>を変更します。よろしいですか？</p>
+	<div>
+		<p>ゲームをリセットします。よろしいですか？</p>
 	</div>
 
-	<form method="post" action="#" th:action="@{/regame/{id}(id=${input.id})}" th:object="${input}">
-		<input type="hidden" name="comment" th:value="*{comment}">
+	<form method="get" action="#" th:action="@{/game}">
 		<input type="submit" value="はい" class="s-button">
 	</form>
-	<form method="get" action="#" th:action="@{/edit/{id}(id=${input.id})}" th:object="${input}">
-		<input type="hidden" name="comment" th:value="*{comment}">
+	<!-- 正しい例 -->
+	<form method="get" action="#" th:action="@{/regame2}">
 		<input type="submit" value="いいえ" class="confilm-button">
 	</form>
 </body>
